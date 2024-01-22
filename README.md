@@ -1,4 +1,4 @@
-# A collection of Web Developement Resources that you might need
+# A collection of Web Developement Resources that you might need :
 
 ## Websites to learn
 
