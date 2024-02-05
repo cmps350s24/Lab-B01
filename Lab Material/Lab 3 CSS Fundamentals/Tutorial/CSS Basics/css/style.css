@@ -1,0 +1,27 @@
+/* Universal selector */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Type [Element] Selectors */
+
+main {
+    background-color: aqua;
+}
+
+footer {
+    background-color: red;
+    color: white;
+    height: 40px;
+    text-align: center;
+}
+
+/* Third way [class] selectors */
+.title {
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
