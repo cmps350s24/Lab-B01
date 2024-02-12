@@ -103,3 +103,53 @@ footer {
     padding: 0.2rem;
     text-align: center;
 }
+
+@media (min-width: 40rem) {
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main-menu {
+        ul {
+            display: flex;
+
+            li:not(:last-child)::after {
+                content: "|";
+                padding: 0 10px;
+            }
+        }
+
+
+    }
+
+    .headline {
+        display: flex;
+    }
+
+    .middle-section {
+        display: flex;
+        gap: 1rem;
+
+        .sections {
+
+
+
+            .abroad-images {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.2rem;
+
+                img {
+                    width: 15rem;
+                    flex: 1;
+                }
+            }
+
+        }
+
+        aside {
+            flex: 0.2;
+        }
+    }
+}
