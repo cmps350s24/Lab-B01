@@ -1,0 +1,75 @@
+* {
+    /* margin: 0; */
+    /* padding: 0; */
+    box-sizing: border-box;
+}
+
+header {
+
+
+
+    img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .main-menu {
+        text-align: center;
+    }
+
+    li {
+        list-style: none;
+        margin: 0.6rem;
+        /* outline: auto; */
+        /* padding: 10px; */
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: palegoldenrod;
+        }
+    }
+}
+
+main {
+
+    .main-title {
+        font-size: clamp(1.5rem, 2.5vw, 4rem);
+    }
+
+    .headline {
+        text-align: center;
+
+        span {
+            color: red;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+
+        }
+    }
+
+
+
+    .middle-section {
+        .sections {
+            line-height: 1.5rem;
+
+            h2 {
+                background-color: red;
+                color: white;
+                padding: 0.2rem;
+                text-align: center;
+            }
+
+            p::first-letter {
+                font-size: 2rem;
+            }
+        }
+    }
+
+}

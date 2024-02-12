@@ -13,16 +13,52 @@
             box-sizing: border-box;
         }
 
-        .box {
+        @media screen and (max-width : 600px) {
+            body {
+                background-color: red;
+            }
+        }
+
+        /* .box {
+            width: 60px;
             height: 60px;
             background-color: red;
-            width: 60px;
+            padding: 5px;
         }
+
+
 
         .container {
             display: flex;
             gap: 1rem;
+            height: 500px;
+
+            outline: 2px solid red;
+            padding: 10px;
+
+            /* justify-content: space-around; */
+        align-items: center;
+        flex-wrap: wrap;
+        /* align-content: center; */
         }
+
+
+        .box1 {
+            height: 100px;
+            /* padding-top: 15px; */
+            flex: ;
+        }
+
+        .box2 {
+            height: 100px;
+            /* padding-top: 15px; */
+            /* flex-grow: 2;
+            flex-shrink: 2; */
+            flex: 1;
+            order: 8;
+        }
+
+        */
     </style>
 </head>
 
@@ -30,9 +66,9 @@
     <div class="container">
         <div class="box box1">BOX 1</div>
         <div class="box box2">BOX 2</div>
-        <div class="box box2">BOX 3</div>
-        <div class="box box2">BOX 4</div>
-        <div class="box box2">BOX 5</div>
+        <div class="box box3">BOX 3</div>
+        <div class="box box4">BOX 4</div>
+        <div class="box box5">BOX 5</div>
     </div>
 </body>
 
