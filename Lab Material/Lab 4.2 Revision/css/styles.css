@@ -1,5 +1,5 @@
 :root {
-    --text-color: #FFA000;
+    --text-color: #f1f7f7;
 }
 
 * {
@@ -25,18 +25,24 @@ body {
 
 .main {
     background-color: rgb(128, 0, 255);
-    height: 91vh;
+}
+
+.section {
+    background-color: rgb(157, 255, 0);
+}
+
+.aside {
+    background-color: rgb(255, 72, 0);
 }
 
 .footer {
     background-color: rgb(255, 0, 255);
 }
 
-.container {
 
-    background-color: blueviolet;
+.container {
     grid-template-rows: auto auto 1fr auto;
-    height: 100vh;
+    height: 80vh;
     outline: auto;
     margin: 0.2rem;
     padding: 0.3rem;
