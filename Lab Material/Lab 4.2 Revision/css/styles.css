@@ -58,6 +58,14 @@ body {
     grid-area: footer;
 }
 
+.sub-section {
+    display: flex;
+    color: blue;
+    outline: auto;
+    gap: 0.2rem;
+    margin: 1rem;
+    padding: 1rems;
+}
 
 .container {
 
