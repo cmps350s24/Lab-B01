@@ -1,19 +1,28 @@
+:root {
+    --text-color: #FFA000;
+}
+
+body {
+    color: var(--text-color)
+}
+
 .header {
     background-color: rgb(13, 133, 133);
-    color: white;
+
 }
 
 .nav {
     background-color: rgb(99, 144, 144);
-    color: white;
 }
 
 .main {
     background-color: rgb(128, 0, 255);
-    color: white;
 }
 
 .footer {
     background-color: rgb(255, 0, 255);
-    color: white;
+}
+
+.container {
+    grid
 }
