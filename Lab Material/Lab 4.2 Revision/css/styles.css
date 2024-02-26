@@ -2,14 +2,22 @@
     --text-color: #FFA000;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     color: var(--text-color)
 }
 
 .header {
     background-color: rgb(13, 133, 133);
+    /* height: 80px; */
 
 }
+
 
 .nav {
     background-color: rgb(99, 144, 144);
@@ -17,6 +25,7 @@ body {
 
 .main {
     background-color: rgb(128, 0, 255);
+    height: 91vh;
 }
 
 .footer {
@@ -24,5 +33,12 @@ body {
 }
 
 .container {
-    grid
+
+    background-color: blueviolet;
+    grid-template-rows: auto auto 1fr auto;
+    height: 100vh;
+    outline: auto;
+    margin: 0.2rem;
+    padding: 0.3rem;
+
 }
