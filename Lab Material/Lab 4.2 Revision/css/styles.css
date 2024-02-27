@@ -44,6 +44,7 @@ body {
     background-color: rgb(157, 255, 0);
     flex: 5;
     grid-area: section;
+    height: 100%;
 
 }
 
@@ -68,20 +69,25 @@ body {
 }
 
 .container {
-
     height: 80vh;
     outline: auto;
     margin: 0.2rem;
     padding: 0.3rem;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: auto auto 1fr auto;
-    gap: 0.2rem;
-    grid-template-areas:
-        'header header'
-        'nav nav'
-        'aside section'
-        'footer footer'
-    ;
+}
 
+/* big screen more complexity */
+@media screen and (min-width : 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: auto auto 1fr auto;
+        gap: 0.2rem;
+        grid-template-areas:
+            'header header'
+            'nav nav'
+            'aside section'
+            'footer footer'
+        ;
+
+    }
 }
