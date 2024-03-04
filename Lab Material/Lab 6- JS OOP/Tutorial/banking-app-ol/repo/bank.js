@@ -22,3 +22,7 @@ const accounts = [
     }
 ]
 
+export function addAccount(account) {
+    accounts.push(account)
+}
+
