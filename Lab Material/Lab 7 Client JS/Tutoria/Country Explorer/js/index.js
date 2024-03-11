@@ -11,6 +11,8 @@ countryDD.addEventListener('change', handleCountryChange)
 
 
 async function handleRegionChange() {
+
+
     const url = `${regionBaseURL}${regionDD.value}`
     const data = await fetch(url)
     const countries = await data.json()
@@ -26,15 +28,17 @@ async function handleCountryChange() {
     const country = countries[0]
 
     factsArea.innerHTML = convertCountryToHTMLTable(country)
+
+    regionDD.remove()
 }
 
 function convertCountryToHTMLTable(country) {
     return ` 
             <h1> ${country.name.official} </h1>
-            <img src="${country.flags.png}" alt="${country.name.official} flag" />
-            <table>
+            <img src="${country.flags.png}" alt="${country.name.official} flag " />
+            <table id="table">
                 <tr>
-                    <th>Official Country Name</th>
+                    <th >Official Country Name</th>
                     <td>${country.name.official}</td>
                 </tr>
                 <tr>
