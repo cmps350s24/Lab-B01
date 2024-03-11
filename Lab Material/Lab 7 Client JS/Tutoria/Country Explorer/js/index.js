@@ -1,5 +1,4 @@
 // references to the elements that we will be interacting with
-
 const regionBaseURL = "https://restcountries.com/v3.1/region/"
 
 const regionDD = document.querySelector("#region")
