@@ -7,8 +7,10 @@ const countryDD = document.querySelector("#country")
 
 regionDD.addEventListener('change', handleRegionChange)
 
-function handleRegionChange() {
+async function handleRegionChange() {
     const url = `${regionBaseURL}${regionDD.value}`
-    const data = fetch(url)
-    console.log(data);
+    const data = await fetch(url)
+    const countries = await data.json()
+
+    countryDD.innerHTML = countries.map(country => `<option value=${country.name.common}> ${country.name.common} </option> `).join(' ')
 }
