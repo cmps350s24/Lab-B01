@@ -1,4 +1,8 @@
+import AccountsRepo from "@/app/repo/accounts-repo"
+const accountsRepo = new AccountsRepo()
+
 export async function GET(request, { params }) {
     const accountNo = params.id
-    return Response.json({ data: `The data /api/accounts/${accountNo}` }, { status: 200 })
+    const account = await accountsRepo.getAccount(accountNo)
+    return Response.json(account, { status: 200 })
 }
