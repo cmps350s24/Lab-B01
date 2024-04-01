@@ -1,4 +1,5 @@
 import React from 'react'
+import Account from '@/app/accounts/Account'
 
 export default function Accounts({ initialAccounts }) {
 
@@ -11,7 +12,9 @@ export default function Accounts({ initialAccounts }) {
                     <th>Balance</th>
                     <th>Action</th>
                 </tr>
-                {initialAccounts.map(account => accountToHTMLRow(account)).join('')}
+                {initialAccounts
+                    .map(account => <Account account={account}></Account>)
+                }
             </table>
         </>
 
