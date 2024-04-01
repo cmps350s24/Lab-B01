@@ -4,15 +4,15 @@ export default function Accounts({ initialAccounts }) {
 
     return (
         <>
-            <h1>2 + 5 = {2 + 5}</h1>
-            <ol>
-                {initialAccounts
-                    .map(account =>
-                        <li>{account.accountNo}
-                            - {account.firstname}
-                        </li>
-                    )}
-            </ol>
+            <table id="accounts">
+                <tr>
+                    <th>Account No</th>
+                    <th>Account Type</th>
+                    <th>Balance</th>
+                    <th>Action</th>
+                </tr>
+                {initialAccounts.map(account => accountToHTMLRow(account)).join('')}
+            </table>
         </>
 
     )
