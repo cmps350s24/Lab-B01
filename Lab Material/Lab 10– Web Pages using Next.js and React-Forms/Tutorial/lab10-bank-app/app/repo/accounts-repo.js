@@ -18,7 +18,7 @@ class AccountsRepo {
 
     }
     async addAccount(account) {
-        if (account.acctType == 'Savings' || account.acctType == 'Current') {
+        if (account.acctType == 'Saving' || account.acctType == 'Current') {
             account.balance = 0
         } else {
             account.balance = -1000

@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import styles from '@/app/page.module.css'
+import Link from 'next/link'
 
 export default function Account({ account, onDelete }) {
 
@@ -23,11 +24,18 @@ export default function Account({ account, onDelete }) {
                         <i class="fas fa-trash">Delete</i>
                     </button> : ''}
 
-                <button className={styles.btnEdit}>
-                    <i className="fas fa-edit">
-                        Edit
-                    </i>
-                </button>
+                <Link href={
+                    {
+                        pathname: '/accounts/upsert',
+                        query: account
+                    }
+                }>
+                    <button className={styles.btnEdit}>
+                        <i className="fas fa-edit">
+                            Edit
+                        </i>
+                    </button>
+                </Link>
             </td>
         </tr >
     )
