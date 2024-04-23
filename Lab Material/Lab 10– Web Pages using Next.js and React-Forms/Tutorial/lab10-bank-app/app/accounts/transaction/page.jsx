@@ -1,10 +1,19 @@
 'use client'
-import React from 'react'
+import { React, useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import styles from '@/app/page.module.css'
 
+
 export default function Transaction() {
     const router = useRouter()
+    const [accounts, setAccounts] = useState([])
+
+    useEffect(() => {
+        fetch('/api/accounts')
+            .then(res => res.json())
+            .then(setAccounts)
+
+    }, [])
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -25,11 +34,13 @@ export default function Transaction() {
     }
     return (
         <>
-            <h3>Add Transaction</h3>
-            <form id="trans-form" onSubmit={handleSubmit}>
+            <h3 className={styles.title}>Add Transaction</h3>
+            <form id="trans-form" onSubmit={handleSubmit} className={styles.form}>
                 <label for="accountNo">Account No</label>
                 <select name="accountNo" id="accountNo" required>
-                    <option></option>
+                    {accounts.map(account => <option value={account.accountNo} key={account.accountNo}>
+                        {account.accountNo} - {account.firstname}   {account.lastname} -  {account.balance}
+                    </option>)}
                 </select>
 
                 <label for="type">Transaction Type</label>
@@ -42,7 +53,7 @@ export default function Transaction() {
                 <label for="amount">Amount</label>
                 <input type="number" id="amount" name="amount" required />
                 <button type="Submit">Submit</button>
-            </form>
+            </form >
         </>
     )
 }
