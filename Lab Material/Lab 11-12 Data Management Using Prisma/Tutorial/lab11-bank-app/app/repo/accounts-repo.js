@@ -122,11 +122,37 @@ class AccountsRepo {
         // update the missing information of the transaction object
         transaction.accountNo = accountNo
         transaction.amount = parseInt(transaction.amount.toString());
+        //1. find the account you want to add the transaction to
+        //2. check if it is withdraw or deposit
+        //3. if deposit just add the money
+        //4. if withdraw check if the balance is enough
+        //5. if enough then deduct the money
+        //6. if not enough then return insufficient funds
+        //7. update the account
+        //8. add the transaction
+        const account = await this.getAccount(accountNo)
+        if (transaction.transType == "Deposit") {
+            account.balance += transaction.amount
+        } else {
+            if (account.balance >= transaction.amount) {
+                account.balance -= transaction.amount
+            } else {
+                return { error: "Insufficient funds" }
+            }
+        }
+        await this.updateAccount(accountNo, account)
+        return prisma.transaction.create({
+            data: transaction
+        })
 
     }
     // Aggregations 
     async getMinAndMaxBalance() {
+        try {
 
+        } catch (error) {
+
+        }
     }
     getTop3Accounts() {
 
