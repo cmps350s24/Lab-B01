@@ -28,6 +28,8 @@ model Account {
 
   Owner   Owner  @relation(fields: [ownerId], references: [id])
   ownerId String
+
+  transactions Transaction[]
 }
 
 model Transaction {
@@ -35,4 +37,7 @@ model Transaction {
   transType String
   amount    Float
   date      DateTime @default(now())
+
+  Account   Account @relation(fields: [accountNo], references: [accountNo])
+  accountNo String
 }
