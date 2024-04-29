@@ -68,17 +68,55 @@ class AccountsRepo {
     }
 
     async getAccount(accountNo) {
-
+        try {
+            return prisma.account.findFirst({
+                where: { accountNo: accountNo }
+            })
+        } catch (error) {
+            return {
+                error: error.message
+            }
+        }
     }
     async deleteAccount(accountNo) {
-
+        try {
+            return prisma.account.delete({
+                where: { accountNo: accountNo }
+            })
+        } catch (error) {
+            return {
+                error: error.message
+            }
+        }
     }
-    async searchOwner(name) {
 
+    async searchOwner(name) {
+        try {
+            return prisma.owner.findMany({
+                where: {
+                    OR: [
+                        { firstname: { contains: name } },
+                        { lastname: { contains: name } },
+                    ]
+                }
+            })
+        } catch (error) {
+            return {
+                error: error.message
+            }
+        }
     }
 
     async getTransactions(accountNo) {
-
+        try {
+            return prisma.transaction.findMany({
+                where: { accountNo: accountNo }
+            })
+        } catch (error) {
+            return {
+                error: error.message
+            }
+        }
     }
     async addTransaction(accountNo, transaction) {
         // update the missing information of the transaction object
