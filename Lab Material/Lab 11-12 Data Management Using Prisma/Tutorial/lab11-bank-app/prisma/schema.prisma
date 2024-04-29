@@ -10,3 +10,29 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Owner {
+  id           String    @id @default(cuid())
+  firstname    String
+  lastname     String
+  email        String
+  gender       String
+  profileImage String
+  accounts     Account[]
+}
+
+model Account {
+  accountNo  String   @id @default(cuid())
+  acctType   String
+  balance    Float
+  dateOpened DateTime @default(now())
+
+  Owner   Owner  @relation(fields: [ownerId], references: [id])
+  ownerId String
+}
+
+model Transaction {
+  transId   Int      @id @default(autoincrement())
+  transType String
+  amount    Float
+  date      DateTime @default(now())
+}
